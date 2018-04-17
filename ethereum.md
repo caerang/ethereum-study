@@ -15,16 +15,16 @@ P2P 네트워크 : Ethereum 분산 네트워크의 모든 노드는 동일한 �
 III. Ethereum 모델
 Ethereum은 본질적으로 트랜잭션 기반의 상태 머신입니다. Ethereum의 상태에는 수백만 개의 트랜잭션이 있으며,이 트랜잭션은 블록으로 패키지화됩니다. 각 블록은 이전과 동일합니다. 블록은 서로 링크되어 블록 체인이라는 역방향 연결 목록을 형성합니다. 블록 체인 기반으로 Ethereum을 생성하는 정보 계약이 추가되었습니다.
 
-[ethereum model](./images/blockchain-model.png)
+![ethereum model](./images/blockchain-model.png)
 
 트랜잭션을 효과적이라고 간주하기 위해서는 확인 프로세스를 거쳐야합니다.이 프로세스는 마이닝입니다. 모든 이더넷 네트워크에서 광부 광장이 확인을 완료하기 위해 블록이 효과적인 것으로 간주되는 경우, 생성하고 블록을 확인하기 위해 시도하고 가장 빠른 수 있습니다, 그것은 백본에 추가됩니다 백본 네트워크는 이더넷 광장입니다 가장 긴 체인. 여러 광부는 시간이 좀 걸릴 것 네트워크의 확산 블록, 블록 포장이있는 경우, 그것은 필연적으로 여러 경로, 소위 분기로 이어질 것입니다. 체인 복수 방지하기 위해, 에테르 스퀘어 프로토콜 GHOST (욕심쟁이 무거운 관측 하위 트리), 하나 개의 경로를 선택하도록 계산 완료된 사용한 큰 블록 수는 경로 길어 힘 마이닝 소모량 계산은 자세히 설명 더. 새로운 블록이 일정량의 에테르 동전을 받게된다는 것이 성공적으로 확인 되었기 때문에 주 체인을 선택하는 것이 경제학과 게임 이론의 관점에서 최적입니다.
 
-[blockchain fork](./images/blockchain-fork.png)
+![blockchain fork](./images/blockchain-fork.png)
 
 IV. Ethereum 아키텍처
 Ethereum의 아키텍처 설계는 프로토콜 레이어, 인터페이스 레이어 및 애플리케이션 레이어의 세 가지 레벨로 간단하게 나눌 수 있습니다. 프로토콜 계층은 네트워크 계층과 저장 계층으로 더 나눌 수 있습니다.
 
-[blockchain frame](./images/blockchain-frame.png)
+![blockchain frame](./images/blockchain_frame.png)
 
 기술적 인 관점에서, 프로토콜 계층은 주로 P2P 네트워크 통신, 분산 알고리즘, 암호 서명 및 데이터 저장 기술을 포함합니다. 데이터 저장소의 하단에서 Bitcoin과 Ethereum은 Google의 공개 소스 LevelDB 데이터베이스를 사용합니다.
 
@@ -35,17 +35,17 @@ Ethereum의 아키텍처 설계는 프로토콜 레이어, 인터페이스 레�
 V. Ethereum 핵심 데이터 구조
 Block은 Ethereum의 핵심 데이터 구조 중 하나이며, Block은 Header와 Body의 두 부분으로 구성됩니다.
 
-[block header](./images/block_header.png)
+![block header](./images/block_header.png)
 
 2. Blockchain 및 HeaderChain, Blockchain은 모든 블록을 관리하고 단방향 링크 목록을 만듭니다. Headerchain은 모든 Headers를 관리하고 단방향 연결 목록을 구성합니다. Headerchain은 Blockchain의 일부입니다.
 3. 거래는 본문의 중요한 데이터 구조입니다. 거래는 외부 소유 계정에 의해 생성 된 후 블록 체인에 제출되는 일련의 암호화 서명입니다.
 
-[transaction](./images/transaction.png)
+![transaction](./images/transaction.png)
 
 이진 트리의 노드의 집합으로 구성되어 있습니다 
 4. 에테르 광장 데이터베이스 시스템 -Merkle - 패트리샤 트리는 (MPT)은, 리프 노드의 트리 끝이 데이터 소스의 숫자를 포함, 부모 노드는 두 자식 노드의 해시 값까지입니다 루트 노드.
 
-[hash tree](./images/Hash_Tree.png)
+![hash tree](./images/Hash_Tree.png)
 
 VI. go-ethereum 디렉토리 구조
 ```
@@ -84,4 +84,7 @@ VI. go-ethereum 디렉토리 구조
 | --- trie                  ethereum 중요한 데이터 구조 MPT 구현
 | --- whisper               whisper 노드의 프로토콜
 ```
+
 VII. 정보
+
+[https://github.com/toints/Ethereum-Source-Analysis](https://github.com/toints/Ethereum-Source-Analysis/blob/master/0.1%20go-ethereum%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF%E5%8F%8A%E6%A8%A1%E5%9D%97%E7%BB%84%E7%BB%87%E5%BD%A2%E5%BC%8F.md) 중국어를 구글 번역기를 사용해 한글로 번역한 자료입니다.
